@@ -1,63 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Typography Motion</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html, body{
-    width:100%;
-    height:100%;
-    background:black;
-    overflow:hidden;
-    font-family:sans-serif;
-}
-
-#startScreen{
-    position:fixed;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    background:black;
-    color:white;
-    cursor:pointer;
-    z-index:999;
-}
-
-#title{
-    font-size:1rem;
-    letter-spacing:0.25em;
-    margin-bottom:20px;
-}
-
-#enter{
-    font-size:0.8rem;
-    opacity:0.6;
-}
-
-#videoWrap{
-    width:100vw;
-    height:100vh;
-}
-
-iframe{
-    width:100%;
-    height:100%;
-    border:none;
-}
-</style>
-</head>
-
 <body>
 
 <div id="startScreen">
@@ -66,19 +6,18 @@ iframe{
 </div>
 
 <div id="videoWrap">
-    <iframe
-        src="https://www.youtube.com/embed/jL3NK7fRuCo?autoplay=1&playsinline=1&loop=1&playlist=jL3NK7fRuCo"
-        title="Typography Motion"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-    </iframe>
+    <video id="video" playsinline loop>
+        <source src="typo_mobile.mp4" type="video/mp4">
+    </video>
 </div>
 
 <script>
 const startScreen = document.getElementById("startScreen");
+const video = document.getElementById("video");
 
 startScreen.addEventListener("click", () => {
     startScreen.style.display = "none";
+    video.play();
 });
 </script>
 
